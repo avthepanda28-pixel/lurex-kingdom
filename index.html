@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lurex Kingdom</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080a0f;
+            color: white;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 70px;
+
+            background: #11141c;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 7%;
+
+            border-bottom: 1px solid #292e3a;
+
+            z-index: 999;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #5865f2;
+        }
+
+        nav a {
+            color: #cccccc;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #5865f2;
+        }
+
+        /* HOME */
+
+        #home {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 20px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #252c63 0%,
+                    #080a0f 65%
+                );
+        }
+
+        .hero {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #5865f2;
+        }
+
+        .hero p {
+            color: #a5abb7;
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 15px 27px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .discord {
+            background: #5865f2;
+            color: white;
+        }
+
+        .discord:hover {
+            background: #4752c4;
+            transform: translateY(-4px);
+        }
+
+        .channels-button {
+            background: #1b1f29;
+            color: white;
+
+            border: 1px solid #343947;
+        }
+
+        .channels-button:hover {
+            background: #292e3a;
+            transform: translateY(-4px);
+        }
+
+        /* FEATURES */
+
+        .features {
+            width: 85%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 80px 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .feature {
+            background: #151820;
+
+            border: 1px solid #292e39;
+
+            border-radius: 16px;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            transition: 0.2s;
+        }
+
+        .feature:hover {
+            transform: translateY(-7px);
+            border-color: #5865f2;
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .feature h2 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #9298a5;
+            line-height: 1.5;
+        }
+
+        /* CHANNELS */
+
+        #channels {
+            min-height: 100vh;
+
+            padding: 110px 20px 80px;
+
+            background: #0c0f15;
+        }
+
+        .channel-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .channel-title h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .channel-title span {
+            color: #5865f2;
+        }
+
+        .channel-title p {
+            color: #9298a5;
+        }
+
+        /* CARDS */
+
+        .cards {
+            width: 90%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
+
+            gap: 22px;
+        }
+
+        .card {
+            background: #151820;
+
+            border: 1px solid #292e39;
+
+            border-radius: 17px;
+
+            padding: 35px 22px;
+
+            text-align: center;
+
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #5865f2;
+        }
+
+        .card-icon {
+            font-size: 50px;
+            margin-bottom: 18px;
+        }
+
+        .card h2 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #9298a5;
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+        /* CARD BUTTON */
+
+        .visit {
+            display: inline-block;
+
+            background: #5865f2;
+
+            color: white;
+
+            padding: 12px 22px;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .visit:hover {
+            background: #4752c4;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #11141c;
+
+            border-top: 1px solid #292e3a;
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #707784;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .channel-title h1 {
+                font-size: 38px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            Lurex <span>Kingdom</span>
+        </div>
+
+        <div>
+
+            <a href="#home">Home</a>
+
+            <a href="#channels">Channels</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section id="home">
+
+        <div class="hero">
+
+            <h1>
+                Welcome to
+                <span>Lurex Kingdom</span>
+            </h1>
+
+            <p>
+                A growing gaming and Roblox community.
+                Join our server, discover our channels,
+                participate in events and meet new people.
+            </p>
+
+
+            <div class="buttons">
+
+                <!-- DISCORD OPENS IN A NEW TAB -->
+
+                <a
+                    href="https://discord.com/invite/T2HymyvKr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button discord"
+                >
+                    Join Lurex Kingdom
+                </a>
+
+
+                <!-- SCROLL TO CHANNELS -->
+
+                <a
+                    href="#channels"
+                    class="button channels-button"
+                >
+                    Explore Channels
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <div class="icon">🎮</div>
+
+            <h2>Gaming</h2>
+
+            <p>
+                Enjoy Roblox games and gaming
+                activities with Lurex Kingdom.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">👑</div>
+
+            <h2>Community</h2>
+
+            <p>
+                Meet new people and become part
+                of our growing community.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">🎉</div>
+
+            <h2>Events</h2>
+
+            <p>
+                Participate in events, giveaways
+                and community activities.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHANNELS -->
+
+    <section id="channels">
+
+        <div class="channel-title">
+
+            <h1>
+                Lurex <span>Channels</span>
+            </h1>
+
+            <p>
+                Find all of our communities and
+                platforms in one place.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <!-- DISCORD -->
+
+            <div class="card">
+
+                <div class="card-icon">💬</div>
+
+                <h2>Lurex Kingdom</h2>
+
+                <p>
+                    Join our official Discord server
+                    and become part of the community.
+                </p>
+
+                <a
+                    href="https://discord.com/invite/T2HymyvKr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit"
+                >
+                    Join Server
+                </a>
+
+            </div>
+
+
+            <!-- ROBLOX -->
+
+            <div class="card">
+
+                <div class="card-icon">🎮</div>
+
+                <h2>Roblox</h2>
+
+                <p>
+                    Visit Roblox and discover
+                    our gaming community.
+                </p>
+
+                <a
+                    href="https://www.roblox.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit"
+                >
+                    Visit Roblox
+                </a>
+
+            </div>
+
+
+            <!-- YOUTUBE -->
+
+            <div class="card">
+
+                <div class="card-icon">▶️</div>
+
+                <h2>YouTube</h2>
+
+                <p>
+                    Watch our latest videos and
+                    community content.
+                </p>
+
+                <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit"
+                >
+                    YouTube
+                </a>
+
+            </div>
+
+
+            <!-- INSTAGRAM -->
+
+            <div class="card">
+
+                <div class="card-icon">📸</div>
+
+                <h2>Instagram</h2>
+
+                <p>
+                    Follow Lurex Kingdom for
+                    updates and announcements.
+                </p>
+
+                <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit"
+                >
+                    Instagram
+                </a>
+
+            </div>
+
+
+            <!-- TIKTOK -->
+
+            <div class="card">
+
+                <div class="card-icon">🎵</div>
+
+                <h2>TikTok</h2>
+
+                <p>
+                    Watch our short videos and
+                    latest content.
+                </p>
+
+                <a
+                    href="https://www.tiktok.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit"
+                >
+                    TikTok
+                </a>
+
+            </div>
+
+
+            <!-- ROBLOX GAMES -->
+
+            <div class="card">
+
+                <div class="card-icon">🕹️</div>
+
+                <h2>Roblox Games</h2>
+
+                <p>
+                    Explore and play our Roblox
+                    experiences.
+                </p>
+
+                <a
+                    href="https://www.roblox.com/games/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit"
+                >
+                    Play Now
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Lurex Kingdom. All rights reserved.
+
+    </footer>
+
+
+</body>
+
+</html>
