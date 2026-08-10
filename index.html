@@ -6,9 +6,10 @@
 
 <title>Lurex Kingdom | Gaming Community</title>
 
-<meta name="description" content="Welcome to Lurex Kingdom — a gaming community for players, events, giveaways, trading and discovering new games.">
+<meta name="description" content="Welcome to Lurex Kingdom — a gaming community for gaming, events, giveaways, trading and discovering new games.">
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -22,23 +23,28 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background:
-        radial-gradient(circle at 10% 10%, rgba(242,201,76,.12), transparent 30%),
-        radial-gradient(circle at 90% 30%, rgba(88,101,242,.12), transparent 30%),
+        radial-gradient(circle at 10% 10%, rgba(242,201,76,0.14), transparent 30%),
+        radial-gradient(circle at 90% 30%, rgba(88,101,242,0.13), transparent 30%),
         #050505;
-    color: #fff;
+    color: white;
     line-height: 1.6;
     overflow-x: hidden;
 }
+
+/* BACKGROUND GRID */
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
+
     background:
-        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+
     background-size: 45px 45px;
+
     z-index: -1;
 }
 
@@ -50,7 +56,7 @@ nav {
     top: 0;
     z-index: 1000;
 
-    background: rgba(5,5,5,.88);
+    background: rgba(5,5,5,0.9);
     backdrop-filter: blur(18px);
 
     border-bottom: 1px solid #292929;
@@ -87,7 +93,8 @@ nav {
     color: #ddd;
     text-decoration: none;
     font-weight: 700;
-    transition: .25s;
+
+    transition: 0.25s;
 }
 
 .nav-links a:hover {
@@ -117,6 +124,7 @@ nav {
 .hero-image {
     width: 100%;
     max-width: 1050px;
+
     height: 500px;
 
     object-fit: cover;
@@ -130,8 +138,8 @@ nav {
     border: 1px solid #333;
 
     box-shadow:
-        0 0 70px rgba(242,201,76,.14),
-        0 30px 80px rgba(0,0,0,.7);
+        0 0 70px rgba(242,201,76,0.14),
+        0 30px 80px rgba(0,0,0,0.7);
 }
 
 .hero h1 {
@@ -184,27 +192,27 @@ nav {
 
     font-weight: 800;
 
-    transition: .25s;
+    transition: 0.25s;
 }
 
 .discord-button {
     background: #5865F2;
 
-    color: #fff;
+    color: white;
 
     box-shadow:
-        0 10px 30px rgba(88,101,242,.2);
+        0 10px 30px rgba(88,101,242,0.2);
 }
 
 .discord-button:hover {
     transform: translateY(-5px);
 
     box-shadow:
-        0 15px 40px rgba(88,101,242,.4);
+        0 15px 40px rgba(88,101,242,0.4);
 }
 
 .learn-button {
-    color: #fff;
+    color: white;
 
     background: #111;
 
@@ -253,8 +261,8 @@ section {
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.035),
-            rgba(255,255,255,.01)
+            rgba(255,255,255,0.035),
+            rgba(255,255,255,0.01)
         ),
         #0d0d0d;
 
@@ -265,7 +273,7 @@ section {
     padding: 45px;
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,.35);
+        0 20px 70px rgba(0,0,0,0.35);
 }
 
 .about-box p {
@@ -303,7 +311,7 @@ section {
 
     text-align: center;
 
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .feature:hover {
@@ -312,8 +320,8 @@ section {
     border-color: #f2c94c;
 
     box-shadow:
-        0 15px 45px rgba(0,0,0,.45),
-        0 0 25px rgba(242,201,76,.07);
+        0 15px 45px rgba(0,0,0,0.45),
+        0 0 25px rgba(242,201,76,0.07);
 }
 
 .feature-icon {
@@ -355,7 +363,7 @@ section {
 
     text-align: center;
 
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .owner:hover {
@@ -364,12 +372,12 @@ section {
     border-color: #f2c94c;
 
     box-shadow:
-        0 15px 45px rgba(0,0,0,.45),
-        0 0 25px rgba(242,201,76,.08);
+        0 15px 45px rgba(0,0,0,0.45),
+        0 0 25px rgba(242,201,76,0.08);
 }
 
 
-/* ================= OWNER PROFILE PICTURES ================= */
+/* ================= OWNER PFP ================= */
 
 .owner-avatar {
     width: 110px;
@@ -386,7 +394,7 @@ section {
     background: #161616;
 
     box-shadow:
-        0 0 30px rgba(242,201,76,.18);
+        0 0 30px rgba(242,201,76,0.18);
 }
 
 .owner-avatar img {
@@ -502,7 +510,7 @@ section {
     background:
         radial-gradient(
             circle at center,
-            rgba(242,201,76,.13),
+            rgba(242,201,76,0.13),
             transparent 65%
         ),
         #0d0d0d;
@@ -510,7 +518,7 @@ section {
     border: 1px solid #333;
 
     box-shadow:
-        0 25px 80px rgba(0,0,0,.35);
+        0 25px 80px rgba(0,0,0,0.35);
 }
 
 .event-box h2 {
@@ -581,7 +589,7 @@ footer {
 }
 
 footer strong {
-    color: #fff;
+    color: white;
 }
 
 
@@ -770,23 +778,16 @@ Explore Lurex Kingdom
 
 <section id="about">
 
-
 <h2 class="section-title">
-
 About Lurex Kingdom
-
 </h2>
 
-
 <p class="section-subtitle">
-
 More than just another gaming community.
-
 </p>
 
 
 <div class="about-box">
-
 
 <p>
 
@@ -856,7 +857,6 @@ gaming community.
 
 </p>
 
-
 </div>
 
 </section>
@@ -867,18 +867,12 @@ gaming community.
 
 <section id="features">
 
-
 <h2 class="section-title">
-
 What We Offer
-
 </h2>
 
-
 <p class="section-subtitle">
-
 There is always something happening in Lurex Kingdom.
-
 </p>
 
 
@@ -979,18 +973,12 @@ members while following the rules.
 
 <section id="owners">
 
-
 <h2 class="section-title">
-
 Meet The Owners
-
 </h2>
 
-
 <p class="section-subtitle">
-
 The people behind Lurex Kingdom.
-
 </p>
 
 
@@ -1004,7 +992,7 @@ The people behind Lurex Kingdom.
 <div class="owner-avatar">
 
 <img
-src="CHEETOZ.png"
+src="./CHEETOZ.png"
 alt="CHEETOZ profile picture"
 >
 
@@ -1027,14 +1015,14 @@ the future of Lurex Kingdom.
 
 
 
-<!-- DOMINICK_2 -->
+<!-- DOMINICK -->
 
 <div class="owner">
 
 <div class="owner-avatar">
 
 <img
-src="Dominick_2.png"
+src="./Dominick_2.png"
 alt="Dominick_2 profile picture"
 >
 
@@ -1064,7 +1052,7 @@ create new experiences for members.
 <div class="owner-avatar">
 
 <img
-src="skylar.png"
+src="./skylar.png"
 alt="Skylar profile picture"
 >
 
@@ -1094,7 +1082,7 @@ and activity of the Kingdom.
 <div class="owner-avatar">
 
 <img
-src="meowly.png"
+src="./meowly.png"
 alt="Meowly profile picture"
 >
 
@@ -1126,11 +1114,9 @@ to the community's growth and future.
 
 <section id="trading">
 
-
 <h2 class="section-title">
 Trading
 </h2>
-
 
 <p class="section-subtitle">
 Trade responsibly and follow the community rules.
@@ -1148,25 +1134,15 @@ Trade responsibly and follow the community rules.
 
 <ul>
 
-<li>
-✔ Trading supported game items
-</li>
+<li>✔ Trading supported game items</li>
 
-<li>
-✔ Trading with community members
-</li>
+<li>✔ Trading with community members</li>
 
-<li>
-✔ Discussing legitimate trades
-</li>
+<li>✔ Discussing legitimate trades</li>
 
-<li>
-✔ Finding people interested in trading
-</li>
+<li>✔ Finding people interested in trading</li>
 
-<li>
-✔ Following server trading rules
-</li>
+<li>✔ Following server trading rules</li>
 
 </ul>
 
@@ -1182,25 +1158,15 @@ Trade responsibly and follow the community rules.
 
 <ul>
 
-<li>
-✖ Cross-trading
-</li>
+<li>✖ Cross-trading</li>
 
-<li>
-✖ Black-market activity
-</li>
+<li>✖ Black-market activity</li>
 
-<li>
-✖ Scamming members
-</li>
+<li>✖ Scamming members</li>
 
-<li>
-✖ Fraudulent trading
-</li>
+<li>✖ Fraudulent trading</li>
 
-<li>
-✖ Breaking community rules
-</li>
+<li>✖ Breaking community rules</li>
 
 </ul>
 
@@ -1217,11 +1183,9 @@ Trade responsibly and follow the community rules.
 
 <section id="rules">
 
-
 <h2 class="section-title">
 Community Standards
 </h2>
-
 
 <p class="section-subtitle">
 Help keep Lurex Kingdom fun, welcoming,
