@@ -22,22 +22,24 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #070707;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(242, 201, 76, 0.12), transparent 30%),
+                radial-gradient(circle at 85% 30%, rgba(88, 101, 242, 0.10), transparent 30%),
+                #050505;
             color: white;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* BACKGROUND */
-
-        body::before {
+        body::after {
             content: "";
             position: fixed;
             inset: 0;
             pointer-events: none;
-            background:
-                radial-gradient(circle at 20% 10%, rgba(242,201,76,.08), transparent 30%),
-                radial-gradient(circle at 80% 40%, rgba(88,101,242,.06), transparent 30%);
+            background-image:
+                linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+            background-size: 45px 45px;
             z-index: -1;
         }
 
@@ -47,13 +49,13 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(7,7,7,.92);
-            backdrop-filter: blur(15px);
+            background: rgba(5, 5, 5, 0.88);
+            backdrop-filter: blur(18px);
             border-bottom: 1px solid #292929;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1250px;
             margin: auto;
             padding: 18px 25px;
 
@@ -73,16 +75,16 @@
         }
 
         .nav-links {
-            list-style: none;
             display: flex;
-            gap: 25px;
+            list-style: none;
+            gap: 28px;
         }
 
         .nav-links a {
-            color: white;
+            color: #ddd;
             text-decoration: none;
-            font-weight: 600;
-            transition: .25s;
+            font-weight: 700;
+            transition: 0.25s;
         }
 
         .nav-links a:hover {
@@ -104,31 +106,32 @@
 
         .hero-content {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1150px;
         }
 
         .hero-image {
             width: 100%;
-            max-width: 1000px;
-            max-height: 520px;
+            max-width: 1050px;
+            height: 500px;
 
             object-fit: cover;
 
             display: block;
             margin: 0 auto 45px;
 
-            border-radius: 24px;
+            border-radius: 25px;
             border: 1px solid #333;
 
             box-shadow:
-                0 0 60px rgba(242,201,76,.12),
-                0 25px 70px rgba(0,0,0,.7);
+                0 0 70px rgba(242, 201, 76, 0.14),
+                0 30px 80px rgba(0, 0, 0, 0.7);
         }
 
         .hero h1 {
             font-size: clamp(45px, 7vw, 85px);
             line-height: 1.05;
             margin-bottom: 25px;
+            letter-spacing: -2px;
         }
 
         .hero h1 span {
@@ -139,7 +142,7 @@
             max-width: 850px;
             margin: auto;
 
-            color: #c5c5c5;
+            color: #bdbdbd;
             font-size: 19px;
         }
 
@@ -150,6 +153,8 @@
 
             display: flex;
             justify-content: center;
+            align-items: center;
+
             gap: 15px;
             flex-wrap: wrap;
         }
@@ -159,33 +164,35 @@
 
             padding: 15px 30px;
 
-            border-radius: 11px;
+            border-radius: 12px;
 
-            font-weight: 800;
             text-decoration: none;
+            font-weight: 800;
 
-            transition: .25s;
+            transition: 0.25s;
         }
 
         .discord-button {
             background: #5865F2;
             color: white;
+
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.18);
         }
 
         .discord-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 35px rgba(88,101,242,.35);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(88, 101, 242, 0.35);
         }
 
         .learn-button {
+            color: white;
             background: #111;
             border: 1px solid #444;
-            color: white;
         }
 
         .learn-button:hover {
+            transform: translateY(-5px);
             border-color: #f2c94c;
-            transform: translateY(-4px);
         }
 
         /* SECTIONS */
@@ -198,13 +205,13 @@
 
         .section-title {
             text-align: center;
-            font-size: 42px;
+            font-size: 43px;
             margin-bottom: 15px;
         }
 
         .section-subtitle {
             text-align: center;
-            color: #999;
+            color: #888;
             max-width: 750px;
             margin: 0 auto 50px;
         }
@@ -212,18 +219,20 @@
         /* ABOUT */
 
         .about-box {
-            background: linear-gradient(145deg,#121212,#0c0c0c);
+            background:
+                linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01)),
+                #0d0d0d;
 
             border: 1px solid #292929;
-            border-radius: 20px;
+            border-radius: 22px;
 
             padding: 45px;
 
-            box-shadow: 0 20px 60px rgba(0,0,0,.25);
+            box-shadow: 0 20px 70px rgba(0,0,0,0.35);
         }
 
         .about-box p {
-            color: #d0d0d0;
+            color: #c8c8c8;
             font-size: 18px;
             line-height: 1.9;
         }
@@ -236,32 +245,33 @@
 
         .features {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 22px;
         }
 
         .feature {
-            background: #101010;
-
+            background: #0e0e0e;
             border: 1px solid #292929;
-            border-radius: 18px;
 
+            border-radius: 20px;
             padding: 35px;
 
             text-align: center;
 
-            transition: .3s;
+            transition: 0.3s;
         }
 
         .feature:hover {
             transform: translateY(-8px);
             border-color: #f2c94c;
 
-            box-shadow: 0 15px 45px rgba(0,0,0,.45);
+            box-shadow:
+                0 15px 45px rgba(0,0,0,0.45),
+                0 0 25px rgba(242,201,76,0.06);
         }
 
         .feature-icon {
-            font-size: 38px;
+            font-size: 42px;
             margin-bottom: 15px;
         }
 
@@ -271,51 +281,53 @@
         }
 
         .feature p {
-            color: #999;
+            color: #929292;
         }
 
         /* OWNERS */
 
         .owners {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
         .owner {
-            background: #101010;
-
+            background: #0e0e0e;
             border: 1px solid #292929;
-            border-radius: 18px;
 
+            border-radius: 20px;
             padding: 35px 20px;
 
             text-align: center;
 
-            transition: .3s;
+            transition: 0.3s;
         }
 
         .owner:hover {
             transform: translateY(-8px);
             border-color: #f2c94c;
+
+            box-shadow:
+                0 15px 45px rgba(0,0,0,0.45),
+                0 0 25px rgba(242,201,76,0.07);
         }
 
-        /* PFP */
-
         .owner-avatar {
-            width: 95px;
-            height: 95px;
+            width: 105px;
+            height: 105px;
 
             margin: 0 auto 20px;
 
             border-radius: 50%;
-
             overflow: hidden;
 
             border: 3px solid #f2c94c;
 
+            background: #161616;
+
             box-shadow:
-                0 0 25px rgba(242,201,76,.18);
+                0 0 30px rgba(242,201,76,0.16);
         }
 
         .owner-avatar img {
@@ -337,11 +349,11 @@
         .owner-role {
             color: #f2c94c;
 
-            font-size: 13px;
-            font-weight: 800;
+            font-size: 12px;
+            font-weight: 900;
 
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
 
             margin-bottom: 15px;
         }
@@ -355,21 +367,21 @@
 
         .trading {
             display: grid;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
 
         .trade-box {
-            background: #101010;
+            background: #0e0e0e;
 
             border: 1px solid #292929;
-            border-radius: 18px;
+            border-radius: 20px;
 
             padding: 35px;
         }
 
         .trade-box h3 {
-            font-size: 24px;
+            font-size: 25px;
             margin-bottom: 20px;
         }
 
@@ -378,18 +390,20 @@
         }
 
         .trade-box li {
-            padding: 12px 0;
+            padding: 13px 0;
+
             color: #bbb;
+
             border-bottom: 1px solid #202020;
         }
 
         /* RULES */
 
         .rules {
-            background: #101010;
+            background: #0e0e0e;
 
             border: 1px solid #292929;
-            border-radius: 18px;
+            border-radius: 20px;
 
             padding: 40px;
         }
@@ -399,30 +413,34 @@
         }
 
         .rules li {
-            color: #c5c5c5;
+            color: #c2c2c2;
             margin: 13px 0;
         }
 
         /* EVENTS */
 
         .event-box {
+            padding: 70px 30px;
+
             text-align: center;
 
-            padding: 65px 30px;
-
-            border-radius: 22px;
+            border-radius: 25px;
 
             background:
-                radial-gradient(circle at center,
-                rgba(242,201,76,.12),
-                transparent 65%),
-                #101010;
+                radial-gradient(
+                    circle at center,
+                    rgba(242,201,76,0.13),
+                    transparent 65%
+                ),
+                #0d0d0d;
 
             border: 1px solid #333;
+
+            box-shadow: 0 25px 80px rgba(0,0,0,0.35);
         }
 
         .event-box h2 {
-            font-size: 42px;
+            font-size: 43px;
             margin-bottom: 15px;
         }
 
@@ -441,17 +459,18 @@
         }
 
         .join-box {
-            padding: 75px 25px;
+            padding: 80px 25px;
 
-            border-radius: 22px;
+            border-radius: 25px;
 
-            background: linear-gradient(145deg,#151515,#0b0b0b);
+            background:
+                linear-gradient(145deg, #151515, #090909);
 
             border: 1px solid #333;
         }
 
         .join-box h2 {
-            font-size: clamp(38px,5vw,58px);
+            font-size: clamp(40px, 5vw, 60px);
             margin-bottom: 15px;
         }
 
@@ -470,7 +489,7 @@
 
             text-align: center;
 
-            padding: 40px 20px;
+            padding: 45px 20px;
 
             color: #666;
         }
@@ -481,7 +500,7 @@
 
         /* MOBILE */
 
-        @media (max-width:900px) {
+        @media (max-width: 900px) {
 
             .nav-links {
                 display: none;
@@ -498,12 +517,21 @@
             .trading {
                 grid-template-columns: 1fr;
             }
+
+            .hero-image {
+                height: 400px;
+            }
         }
 
-        @media (max-width:550px) {
+        @media (max-width: 550px) {
 
             .hero {
                 padding-top: 55px;
+            }
+
+            .hero-image {
+                height: 280px;
+                border-radius: 18px;
             }
 
             .hero p {
@@ -514,15 +542,13 @@
                 padding: 70px 18px;
             }
 
-            .features {
-                grid-template-columns: 1fr;
-            }
-
+            .features,
             .owners {
                 grid-template-columns: 1fr;
             }
 
-            .about-box {
+            .about-box,
+            .rules {
                 padding: 25px;
             }
 
@@ -530,21 +556,18 @@
                 font-size: 16px;
             }
 
-            .rules {
-                padding: 25px;
+            .section-title {
+                font-size: 35px;
             }
         }
-
     </style>
 </head>
-
 
 <body>
 
     <!-- NAVIGATION -->
 
     <nav>
-
         <div class="nav-container">
 
             <div class="logo">
@@ -576,7 +599,6 @@
             </ul>
 
         </div>
-
     </nav>
 
 
@@ -586,7 +608,7 @@
 
         <div class="hero-content">
 
-            <!-- MAIN BANNER -->
+            <!-- BANNER -->
 
             <img
                 src="lurex-kingdom-banner.png"
@@ -602,8 +624,8 @@
             <p>
                 A growing gaming community built for players who want
                 to meet new people, discover exciting games, participate
-                in events, enjoy giveaways, trade supported items and
-                have a great time.
+                in events, enjoy giveaways, trade supported items,
+                and have a great time.
             </p>
 
             <div class="buttons">
@@ -648,41 +670,46 @@
             <p>
                 Welcome to <strong>Lurex Kingdom</strong>! If you're
                 looking for people to play games with or want to discover
-                fun and recommended games, you'll find it here.
+                fun and recommended games, you've come to the right place.
             </p>
 
             <br>
 
             <p>
-                Lurex Kingdom is a community built around gaming,
-                entertainment, friendship and having a place where
+                Lurex Kingdom is a community created around gaming,
+                entertainment, friendship, and having a place where
                 everyone can find something enjoyable to participate in.
-                Meet new people, find teammates, discover games and
-                become part of an active community.
+                Whether you're an experienced player or simply looking
+                for something new, there is always something happening
+                within the Kingdom.
             </p>
 
             <br>
 
             <p>
-                Members can participate in
-                <strong>weekly events</strong> and
-                <strong>daily giveaways</strong>, giving everyone
-                opportunities to get involved and have fun.
+                Members can join gaming sessions, meet other players,
+                discover new experiences, participate in
+                <strong>weekly events</strong>, and take part in
+                exciting <strong>daily giveaways</strong>.
             </p>
 
             <br>
 
             <p>
                 Trading is also welcomed within the community.
-                However, <strong>cross-trading and black-market activity
-                are not supported by Lurex Kingdom</strong>.
+                However,
+                <strong>
+                    cross-trading and black-market activity are not
+                    supported by Lurex Kingdom.
+                </strong>
             </p>
 
             <br>
 
             <p>
-                Our goal is to continue growing Lurex Kingdom into
-                an active, entertaining and welcoming gaming community.
+                Our goal is to continue building Lurex Kingdom into
+                an active, entertaining, friendly, and welcoming
+                gaming community.
             </p>
 
         </div>
@@ -706,13 +733,17 @@
 
             <div class="feature">
 
-                <div class="feature-icon">🎮</div>
+                <div class="feature-icon">
+                    🎮
+                </div>
 
-                <h3>Gaming</h3>
+                <h3>
+                    Gaming
+                </h3>
 
                 <p>
-                    Find people to play with and discover new
-                    gaming experiences.
+                    Find people to play with and discover
+                    new gaming experiences.
                 </p>
 
             </div>
@@ -720,13 +751,17 @@
 
             <div class="feature">
 
-                <div class="feature-icon">🔎</div>
+                <div class="feature-icon">
+                    🔎
+                </div>
 
-                <h3>Game Recommendations</h3>
+                <h3>
+                    Game Recommendations
+                </h3>
 
                 <p>
-                    Discover fun games recommended by members
-                    of the community.
+                    Discover fun games recommended by
+                    members of the community.
                 </p>
 
             </div>
@@ -734,13 +769,17 @@
 
             <div class="feature">
 
-                <div class="feature-icon">🎉</div>
+                <div class="feature-icon">
+                    🎉
+                </div>
 
-                <h3>Weekly Events</h3>
+                <h3>
+                    Weekly Events
+                </h3>
 
                 <p>
-                    Participate in weekly events and community
-                    activities.
+                    Participate in weekly events and
+                    community activities.
                 </p>
 
             </div>
@@ -748,13 +787,17 @@
 
             <div class="feature">
 
-                <div class="feature-icon">🎁</div>
+                <div class="feature-icon">
+                    🎁
+                </div>
 
-                <h3>Daily Giveaways</h3>
+                <h3>
+                    Daily Giveaways
+                </h3>
 
                 <p>
-                    Take part in exciting giveaways hosted
-                    throughout the community.
+                    Take part in exciting giveaways
+                    hosted throughout the community.
                 </p>
 
             </div>
@@ -762,13 +805,17 @@
 
             <div class="feature">
 
-                <div class="feature-icon">🤝</div>
+                <div class="feature-icon">
+                    🤝
+                </div>
 
-                <h3>Community</h3>
+                <h3>
+                    Community
+                </h3>
 
                 <p>
-                    Meet new people, make friends and find
-                    other players.
+                    Meet new people, make friends, and
+                    find other players.
                 </p>
 
             </div>
@@ -776,13 +823,17 @@
 
             <div class="feature">
 
-                <div class="feature-icon">🔄</div>
+                <div class="feature-icon">
+                    🔄
+                </div>
 
-                <h3>Trading</h3>
+                <h3>
+                    Trading
+                </h3>
 
                 <p>
-                    Trade supported items with other members
-                    while following the rules.
+                    Trade supported items with other
+                    members while following the rules.
                 </p>
 
             </div>
@@ -858,8 +909,8 @@
                 </div>
 
                 <p>
-                    Supporting the community and helping create
-                    new experiences for members.
+                    Supporting the community and helping
+                    create new experiences for members.
                 </p>
 
             </div>
@@ -887,7 +938,7 @@
                 </div>
 
                 <p>
-                    Contributing to the growth, organization
+                    Contributing to the growth, organization,
                     and activity of the Kingdom.
                 </p>
 
@@ -922,7 +973,6 @@
 
             </div>
 
-
         </div>
 
     </section>
@@ -950,11 +1000,25 @@
 
                 <ul>
 
-                    <li>✔ Trading supported game items</li>
-                    <li>✔ Trading with community members</li>
-                    <li>✔ Discussing legitimate trades</li>
-                    <li>✔ Finding people interested in trading</li>
-                    <li>✔ Following server trading rules</li>
+                    <li>
+                        ✔ Trading supported game items
+                    </li>
+
+                    <li>
+                        ✔ Trading with community members
+                    </li>
+
+                    <li>
+                        ✔ Discussing legitimate trades
+                    </li>
+
+                    <li>
+                        ✔ Finding people interested in trading
+                    </li>
+
+                    <li>
+                        ✔ Following server trading rules
+                    </li>
 
                 </ul>
 
@@ -969,11 +1033,25 @@
 
                 <ul>
 
-                    <li>✖ Cross-trading</li>
-                    <li>✖ Black-market activity</li>
-                    <li>✖ Scamming members</li>
-                    <li>✖ Fraudulent trading</li>
-                    <li>✖ Breaking community rules</li>
+                    <li>
+                        ✖ Cross-trading
+                    </li>
+
+                    <li>
+                        ✖ Black-market activity
+                    </li>
+
+                    <li>
+                        ✖ Scamming members
+                    </li>
+
+                    <li>
+                        ✖ Fraudulent trading
+                    </li>
+
+                    <li>
+                        ✖ Breaking community rules
+                    </li>
 
                 </ul>
 
@@ -993,7 +1071,7 @@
         </h2>
 
         <p class="section-subtitle">
-            Help keep Lurex Kingdom fun, welcoming and safe.
+            Help keep Lurex Kingdom fun, welcoming, and safe.
         </p>
 
         <div class="rules">
@@ -1017,7 +1095,7 @@
                 </li>
 
                 <li>
-                    Do not scam, exploit or intentionally harm other members.
+                    Do not scam, exploit, or intentionally harm other members.
                 </li>
 
                 <li>
@@ -1051,7 +1129,7 @@
 
             <p>
                 Lurex Kingdom is designed to stay active.
-                Participate in weekly events, community activities
+                Participate in weekly events, community activities,
                 and giveaways while meeting other members and
                 enjoying the server.
             </p>
@@ -1083,7 +1161,7 @@
             <p>
                 Come meet the community, find people to play with,
                 discover new games, participate in events, enter
-                giveaways and become part of Lurex Kingdom.
+                giveaways, and become part of Lurex Kingdom.
             </p>
 
             <a
