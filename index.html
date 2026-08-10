@@ -1,583 +1,171 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lurex Kingdom | Community</title>
+    <title>Lurex Kingdom</title>
 
-    <meta name="description"
-        content="Welcome to Lurex Kingdom — a gaming community for players, traders, events, giveaways, and discovering new games.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #070707;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
-            background: rgba(7, 7, 7, 0.95);
-            border-bottom: 1px solid #292929;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 18px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #f2c94c;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 70px 20px;
-        }
-
-        .hero-content {
-            max-width: 1100px;
-            width: 100%;
-        }
-
-        .hero-image {
-            width: 100%;
-            max-width: 1000px;
-            max-height: 500px;
-            object-fit: cover;
-            border-radius: 20px;
-            display: block;
-            margin: 0 auto 40px;
-            box-shadow: 0 0 50px rgba(255, 193, 7, 0.12);
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 82px);
-            margin-bottom: 20px;
-            letter-spacing: 3px;
-        }
-
-        .hero h1 span {
-            color: #f2c94c;
-        }
-
-        .hero p {
-            max-width: 850px;
-            margin: auto;
-            color: #c9c9c9;
-            font-size: 19px;
-        }
-
-        .buttons {
-            margin-top: 35px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 15px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.2s;
-        }
-
-        .discord-button {
-            background: #5865F2;
-            color: white;
-        }
-
-        .discord-button:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.1);
-        }
-
-        .learn-button {
-            border: 1px solid #444;
-            color: white;
-            background: #111;
-        }
-
-        .learn-button:hover {
-            background: #1c1c1c;
-        }
-
-        /* GENERAL SECTIONS */
-
-        section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 90px 25px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #aaa;
-            max-width: 750px;
-            margin: 0 auto 50px;
-        }
-
-        /* ABOUT */
-
-        .about-box {
-            background: #101010;
-            border: 1px solid #282828;
-            border-radius: 18px;
-            padding: 35px;
-        }
-
-        .about-box p {
-            color: #d0d0d0;
-            font-size: 18px;
-        }
-
-        /* FEATURES */
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .feature {
-            background: #101010;
-            border: 1px solid #292929;
-            padding: 30px;
-            border-radius: 16px;
-            text-align: center;
-            transition: 0.2s;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-            border-color: #f2c94c;
-        }
-
-        .feature h3 {
-            margin-bottom: 10px;
-            font-size: 21px;
-        }
-
-        .feature p {
-            color: #999;
-        }
-
-        /* OWNERS */
-
-        .owners {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .owner {
-            background: #101010;
-            border: 1px solid #292929;
-            border-radius: 16px;
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        .owner-name {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .owner-role {
-            color: #f2c94c;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .owner p {
-            color: #999;
-            font-size: 14px;
-        }
-
-        /* RULES */
-
-        .rules {
-            background: #101010;
-            border: 1px solid #292929;
-            border-radius: 18px;
-            padding: 35px;
-        }
-
-        .rules ul {
-            padding-left: 25px;
-        }
-
-        .rules li {
-            margin: 12px 0;
-            color: #c5c5c5;
-        }
-
-        /* JOIN */
-
-        .join {
-            text-align: center;
-        }
-
-        .join-box {
-            background: linear-gradient(145deg, #121212, #0b0b0b);
-            border: 1px solid #333;
-            border-radius: 20px;
-            padding: 60px 25px;
-        }
-
-        .join-box h2 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .join-box p {
-            color: #aaa;
-            max-width: 650px;
-            margin: 0 auto 30px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid #292929;
-            text-align: center;
-            padding: 35px 20px;
-            color: #777;
-        }
-
-        footer strong {
-            color: white;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .owners {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .hero {
-                min-height: auto;
-                padding-top: 50px;
-            }
-
-            .hero-image {
-                max-height: 350px;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .owners {
-                grid-template-columns: 1fr;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 60px 18px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-
-    <nav>
-        <div class="nav-container">
-
-            <div class="logo">
-                LUREX KINGDOM
-            </div>
-
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#owners">Owners</a></li>
-                <li><a href="#rules">Rules</a></li>
-            </ul>
-
-        </div>
-    </nav>
-
-
-    <!-- HERO -->
+    <!-- =========================
+         HERO / BANNER
+    ========================== -->
 
     <header class="hero">
 
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
 
-            <!-- YOUR IMAGE -->
             <img
-                src="lurex-kingdom-banner.png"
-                alt="Lurex Kingdom"
-                class="hero-image"
+                src="images/lurex-banner.png"
+                alt="Lurex Kingdom Banner"
+                class="lurex-banner"
             >
 
-            <h1>
-                Welcome to <span>Lurex Kingdom</span>
-            </h1>
+            <div class="crown">👑</div>
 
-            <p>
-                A growing gaming community built for players who want to
-                meet new people, discover exciting games, participate in
-                events, trade items, and simply have a great time.
+            <h1>Welcome to Lurex Kingdom</h1>
+
+            <p class="hero-subtitle">
+                Your next game. Your next teammate. Your next adventure.
             </p>
 
-            <div class="buttons">
-
-                <a
-                    href="https://discord.gg/T2HymyvKr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="button discord-button"
-                >
-                    Join Our Discord
-                </a>
-
-                <a href="#about" class="button learn-button">
-                    Explore Lurex Kingdom
-                </a>
-
-            </div>
+            <a href="#owners" class="hero-button">
+                Meet the Owners
+            </a>
 
         </div>
 
     </header>
 
 
-    <!-- ABOUT -->
+    <!-- =========================
+         WELCOME
+    ========================== -->
 
-    <section id="about">
+    <section class="section">
 
-        <h2 class="section-title">
-            About Lurex Kingdom
-        </h2>
+        <div class="section-title">
+            <span>👑</span>
+            <h2>Welcome to the Lurex Kingdom!</h2>
+        </div>
 
-        <p class="section-subtitle">
-            More than just another gaming community.
+        <p>
+            Looking for people to play games with, discover exciting new
+            experiences, or simply find a fun and welcoming gaming community?
+            <strong>You've come to the right place!</strong>
         </p>
 
-        <div class="about-box">
-
-            <p>
-                Welcome to <strong>Lurex Kingdom</strong>! If you're looking
-                for people to play games with, meet new friends, or discover
-                fun and recommended games, you've come to the right place.
-                Lurex Kingdom is a community created around gaming,
-                entertainment, friendship, and having a place where everyone
-                can find something enjoyable to participate in.
-            </p>
-
-            <br>
-
-            <p>
-                Members can join gaming sessions, talk with other players,
-                discover new experiences, participate in weekly events,
-                and take part in exciting daily giveaways. Whether you're
-                an experienced player or simply looking for something new
-                to play, there is always something happening within the
-                Kingdom.
-            </p>
-
-            <br>
-
-            <p>
-                Trading is also welcomed within the community, allowing
-                members to trade items and interact with other players.
-                However, <strong>cross-trading and black-market activity
-                are not supported by Lurex Kingdom</strong>.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- FEATURES -->
-
-    <section id="features">
-
-        <h2 class="section-title">
-            What We Offer
-        </h2>
-
-        <p class="section-subtitle">
-            There is always something happening in Lurex Kingdom.
+        <p>
+            <strong>Lurex Kingdom</strong> is a growing community created for
+            gamers who want to connect with others, discover recommended games,
+            participate in events, trade items, and simply have a great time.
+            Whether you're searching for someone to play with, looking for your
+            next favorite game, or just want somewhere to hang out and meet new
+            people, Lurex Kingdom has something for you.
         </p>
 
-        <div class="features">
-
-            <div class="feature">
-                <h3>🎮 Gaming</h3>
-                <p>
-                    Find people to play with and discover new games
-                    recommended by the community.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>🎉 Weekly Events</h3>
-                <p>
-                    Participate in community events and activities
-                    throughout the week.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>🎁 Daily Giveaways</h3>
-                <p>
-                    Join the server and take your chance at exciting
-                    daily giveaways.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>🤝 Community</h3>
-                <p>
-                    Meet new people, make friends, and become part of
-                    the Lurex Kingdom community.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>🔄 Trading</h3>
-                <p>
-                    Trade supported items with other members while
-                    following community rules.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>🌟 Recommendations</h3>
-                <p>
-                    Discover games and activities recommended by
-                    members of the Kingdom.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- OWNERS -->
-
-    <section id="owners">
-
-        <h2 class="section-title">
-            The Owners
-        </h2>
-
-        <p class="section-subtitle">
-            Meet the people behind Lurex Kingdom.
+        <p>
+            Our community is built around
+            <strong>gaming, friendship, entertainment, events, and activity.</strong>
+            Members can share their favorite games, recommend experiences to
+            others, participate in community activities, and connect with people
+            who share similar interests.
         </p>
 
-        <div class="owners">
+    </section>
 
-            <div class="owner">
-                <div class="owner-name">CHEETOZ</div>
-                <div class="owner-role">Owner</div>
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section class="section features-section">
+
+        <div class="section-title">
+            <span>🎮</span>
+            <h2>What Lurex Kingdom Offers</h2>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">🎮</div>
+
+                <h3>Find People to Play With</h3>
+
                 <p>
-                    Helping lead the community and shape the future
-                    of Lurex Kingdom.
+                    Looking for teammates or someone to play your favorite
+                    game with? Meet other members and find people to play
+                    alongside.
                 </p>
             </div>
 
-            <div class="owner">
-                <div class="owner-name">Dominick_2</div>
-                <div class="owner-role">Owner</div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+
+                <h3>Recommended Games</h3>
+
                 <p>
-                    Supporting the community and helping create
-                    new experiences for members.
+                    Discover games recommended by the community and find
+                    something new to play when you're bored of your usual
+                    games.
                 </p>
             </div>
 
-            <div class="owner">
-                <div class="owner-name">Skylar</div>
-                <div class="owner-role">Owner</div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+
+                <h3>Item Trading</h3>
+
                 <p>
-                    Contributing to the growth, organization,
-                    and activity of the Kingdom.
+                    Trading is supported within the community, allowing members
+                    to exchange items and build their collections.
                 </p>
             </div>
 
-            <div class="owner">
-                <div class="owner-name">Death</div>
-                <div class="owner-role">Owner</div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎉</div>
+
+                <h3>Weekly Events</h3>
+
                 <p>
-                    Part of the leadership team helping guide
-                    and develop Lurex Kingdom.
+                    Take part in regularly hosted community events and
+                    activities. There's always something new happening in the
+                    Kingdom.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">🎁</div>
+
+                <h3>Daily Giveaways</h3>
+
+                <p>
+                    Members can participate in giveaways throughout the week
+                    for opportunities to win exciting rewards.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+
+                <h3>Active Community</h3>
+
+                <p>
+                    Chat, meet new people, share your interests, and become
+                    part of an expanding gaming community.
                 </p>
             </div>
 
@@ -586,77 +174,291 @@
     </section>
 
 
-    <!-- RULES -->
+    <!-- =========================
+         TRADING POLICY
+    ========================== -->
 
-    <section id="rules">
+    <section class="section">
 
-        <h2 class="section-title">
-            Community Standards
-        </h2>
+        <div class="policy-box">
 
-        <p class="section-subtitle">
-            Help us keep Lurex Kingdom fun, welcoming, and safe.
-        </p>
-
-        <div class="rules">
-
-            <ul>
-                <li>Respect other members of the community.</li>
-                <li>Follow the rules established within the Discord server.</li>
-                <li>Cross-trading is not supported by Lurex Kingdom.</li>
-                <li>Black-market activity is not supported.</li>
-                <li>Do not scam, exploit, or intentionally harm other members.</li>
-                <li>Keep conversations appropriate and respectful.</li>
-                <li>Have fun and help make the community better.</li>
-            </ul>
-
-        </div>
-
-    </section>
-
-
-    <!-- JOIN -->
-
-    <section class="join">
-
-        <div class="join-box">
-
-            <h2>Ready to Join?</h2>
+            <div class="section-title">
+                <span>🛡️</span>
+                <h2>Our Trading Policy</h2>
+            </div>
 
             <p>
-                Come meet the community, find people to play with,
-                participate in events, enter giveaways, and become
-                part of Lurex Kingdom.
+                Lurex Kingdom allows members to
+                <strong>trade items within the community</strong>,
+                but there are important restrictions.
             </p>
 
-            <a
-                href="https://discord.gg/T2HymyvKr"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button discord-button"
-            >
-                Join Lurex Kingdom
-            </a>
+            <div class="warning-box">
+                <strong>
+                    ⚠️ Cross Trading and Black Market activities are NOT
+                    supported by Lurex Kingdom.
+                </strong>
+            </div>
+
+            <p>
+                Members should only participate in legitimate and permitted
+                trades. Lurex Kingdom is not responsible for trades conducted
+                outside the community's supported trading system.
+            </p>
+
+            <p>
+                Our goal is to keep trading enjoyable while maintaining a safe
+                and organized environment for everyone.
+            </p>
 
         </div>
 
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         OWNERS
+    ========================== -->
+
+    <section class="section owners-section" id="owners">
+
+        <div class="section-title">
+            <span>👑</span>
+            <h2>Meet the Owners</h2>
+        </div>
+
+        <p class="owners-intro">
+            Lurex Kingdom is managed by a dedicated ownership team that works
+            together to develop the community, organize activities, support
+            members, and shape the future of the Kingdom.
+        </p>
+
+
+        <div class="owners-grid">
+
+
+            <!-- CHEETOZ -->
+
+            <article class="owner-card">
+
+                <div class="pfp-wrapper">
+
+                    <img
+                        src="images/cheetoz.png"
+                        alt="CHEETOZ"
+                        class="owner-pfp"
+                    >
+
+                </div>
+
+                <div class="owner-info">
+
+                    <h3>🍪 CHEETOZ</h3>
+
+                    <span class="owner-role">
+                        FOUNDING OWNER
+                    </span>
+
+                    <p>
+                        <strong>CHEETOZ</strong> is one of the founding owners
+                        of Lurex Kingdom and plays an important role in shaping
+                        the community's overall direction.
+                    </p>
+
+                    <p>
+                        Through leadership, management, and community
+                        involvement, CHEETOZ helps guide the Kingdom's
+                        development while working toward creating an active,
+                        enjoyable, and welcoming environment for all members.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- DOMINICK -->
+
+            <article class="owner-card">
+
+                <div class="pfp-wrapper">
+
+                    <img
+                        src="images/dominick_2.png"
+                        alt="Dominick_2"
+                        class="owner-pfp"
+                    >
+
+                </div>
+
+                <div class="owner-info">
+
+                    <h3>⚔️ Dominick_2</h3>
+
+                    <span class="owner-role">
+                        OWNER
+                    </span>
+
+                    <p>
+                        <strong>Dominick_2</strong> is one of the owners behind
+                        Lurex Kingdom and contributes to the management and
+                        continued development of the community.
+                    </p>
+
+                    <p>
+                        Through leadership and active participation,
+                        Dominick_2 helps keep the community organized while
+                        supporting events, activities, and the overall
+                        experience of its members.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- SKYLAR -->
+
+            <article class="owner-card">
+
+                <div class="pfp-wrapper">
+
+                    <img
+                        src="images/skylar.png"
+                        alt="Skylar"
+                        class="owner-pfp"
+                    >
+
+                </div>
+
+                <div class="owner-info">
+
+                    <h3>🌟 Skylar</h3>
+
+                    <span class="owner-role">
+                        OWNER
+                    </span>
+
+                    <p>
+                        <strong>Skylar</strong> is a member of the Lurex Kingdom
+                        ownership team who contributes to the growth and
+                        development of the community.
+                    </p>
+
+                    <p>
+                        Skylar helps support the community's activities,
+                        organization, and future plans while working alongside
+                        the rest of the ownership team to create a positive and
+                        engaging environment.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- MEOWLY -->
+
+            <article class="owner-card">
+
+                <div class="pfp-wrapper">
+
+                    <img
+                        src="images/meowly.png"
+                        alt="Meowly"
+                        class="owner-pfp"
+                    >
+
+                </div>
+
+                <div class="owner-info">
+
+                    <h3>🐱 Meowly</h3>
+
+                    <span class="owner-role">
+                        OWNER
+                    </span>
+
+                    <p>
+                        <strong>Meowly</strong> is one of the owners of Lurex
+                        Kingdom and contributes to the community's management,
+                        development, and overall growth.
+                    </p>
+
+                    <p>
+                        Through leadership and active involvement, Meowly helps
+                        maintain the community's direction while working
+                        alongside the other owners to improve the experience
+                        for everyone within the Kingdom.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         OWNERSHIP TEAM
+    ========================== -->
+
+    <section class="section team-section">
+
+        <div class="section-title">
+            <span>👑</span>
+            <h2>The Lurex Kingdom Ownership Team</h2>
+        </div>
+
+        <div class="team-names">
+            CHEETOZ
+            <span>•</span>
+            Dominick_2
+            <span>•</span>
+            Skylar
+            <span>•</span>
+            Meowly
+        </div>
+
+        <p>
+            Together, the ownership team works to build
+            <strong>Lurex Kingdom</strong> into an active, entertaining, and
+            welcoming gaming community where members can meet new people,
+            discover games, participate in events, trade items, and create
+            memorable experiences.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
-        <p>
-            © 2026 <strong>Lurex Kingdom</strong>.
-            All rights reserved.
-        </p>
+        <div class="footer-crown">👑</div>
+
+        <h2>JOIN THE KINGDOM TODAY</h2>
 
         <p>
-            Built for the Lurex Kingdom community.
+            Your next game. Your next teammate. Your next event.
+            Your next adventure.
         </p>
+
+        <p class="footer-highlight">
+            It all starts here.
+        </p>
+
+        <div class="footer-title">
+            👑 Welcome to Lurex Kingdom.
+        </div>
 
     </footer>
 
+
 </body>
 </html>
+```
