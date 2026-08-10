@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Lurex Kingdom | Community</title>
@@ -10,6 +13,7 @@
         content="Welcome to Lurex Kingdom — a gaming community for players, traders, events, giveaways, and discovering new games.">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -25,45 +29,67 @@
             background: #070707;
             color: #ffffff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* NAVIGATION */
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
             width: 100%;
-            background: rgba(7, 7, 7, 0.95);
+
+            background: rgba(7, 7, 7, 0.96);
+
             border-bottom: 1px solid #292929;
+
             backdrop-filter: blur(10px);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: auto;
+
             padding: 18px 25px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
+            color: white;
+
             font-size: 24px;
-            font-weight: 800;
+            font-weight: 900;
+
             letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #f2c94c;
         }
 
         .nav-links {
             display: flex;
             gap: 25px;
+
             list-style: none;
         }
 
         .nav-links a {
             color: #ffffff;
-            text-decoration: none;
+
+            font-size: 15px;
             font-weight: 600;
+
             transition: 0.2s;
         }
 
@@ -71,37 +97,65 @@
             color: #f2c94c;
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            min-height: 90vh;
+            min-height: 92vh;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
-            padding: 70px 20px;
+
+            padding: 80px 20px;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(242, 201, 76, 0.10),
+                    transparent 45%
+                );
         }
 
         .hero-content {
-            max-width: 1100px;
             width: 100%;
+            max-width: 1100px;
+
+            animation: fadeIn 1s ease;
         }
 
         .hero-image {
             width: 100%;
             max-width: 1000px;
+
             max-height: 500px;
+
             object-fit: cover;
-            border-radius: 20px;
+
             display: block;
-            margin: 0 auto 40px;
-            box-shadow: 0 0 50px rgba(255, 193, 7, 0.12);
+
+            margin: 0 auto 45px;
+
+            border-radius: 22px;
+
+            border: 1px solid rgba(242, 201, 76, 0.25);
+
+            box-shadow:
+                0 0 60px rgba(242, 201, 76, 0.10),
+                0 25px 70px rgba(0, 0, 0, 0.7);
         }
 
         .hero h1 {
-            font-size: clamp(42px, 7vw, 82px);
-            margin-bottom: 20px;
-            letter-spacing: 3px;
+            font-size: clamp(42px, 7vw, 85px);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+
+            letter-spacing: 2px;
         }
 
         .hero h1 span {
@@ -110,154 +164,328 @@
 
         .hero p {
             max-width: 850px;
+
             margin: auto;
-            color: #c9c9c9;
+
+            color: #c7c7c7;
+
             font-size: 19px;
         }
 
+        /* =========================
+           BUTTONS
+        ========================= */
+
         .buttons {
             margin-top: 35px;
+
             display: flex;
+
             justify-content: center;
+
             gap: 15px;
+
             flex-wrap: wrap;
         }
 
         .button {
             display: inline-block;
+
             padding: 15px 28px;
+
             border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.2s;
+
+            font-weight: 800;
+
+            transition: 0.25s;
         }
 
         .discord-button {
             background: #5865F2;
+
             color: white;
         }
 
         .discord-button:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.1);
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 30px rgba(88, 101, 242, 0.3);
         }
 
         .learn-button {
-            border: 1px solid #444;
+            background: #111111;
+
             color: white;
-            background: #111;
+
+            border: 1px solid #444444;
         }
 
         .learn-button:hover {
-            background: #1c1c1c;
+            background: #1d1d1d;
+
+            border-color: #f2c94c;
         }
 
-        /* GENERAL SECTIONS */
+        /* =========================
+           SECTIONS
+        ========================= */
 
         section {
-            max-width: 1100px;
+            max-width: 1150px;
+
             margin: auto;
-            padding: 90px 25px;
+
+            padding: 100px 25px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 40px;
-            margin-bottom: 20px;
+
+            font-size: 42px;
+
+            margin-bottom: 18px;
         }
 
         .section-subtitle {
             text-align: center;
-            color: #aaa;
+
+            color: #999999;
+
             max-width: 750px;
+
             margin: 0 auto 50px;
         }
 
-        /* ABOUT */
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about-box {
-            background: #101010;
-            border: 1px solid #282828;
-            border-radius: 18px;
-            padding: 35px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #121212,
+                    #0d0d0d
+                );
+
+            border: 1px solid #292929;
+
+            border-radius: 20px;
+
+            padding: 45px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.25);
         }
 
         .about-box p {
             color: #d0d0d0;
+
             font-size: 18px;
+
+            line-height: 1.9;
         }
 
-        /* FEATURES */
+        .about-box strong {
+            color: #f2c94c;
+        }
+
+        /* =========================
+           FEATURES
+        ========================= */
 
         .features {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
         }
 
         .feature {
             background: #101010;
+
             border: 1px solid #292929;
-            padding: 30px;
-            border-radius: 16px;
+
+            border-radius: 17px;
+
+            padding: 32px;
+
             text-align: center;
-            transition: 0.2s;
+
+            transition: 0.3s;
         }
 
         .feature:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
+
             border-color: #f2c94c;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 35px;
+
+            margin-bottom: 15px;
         }
 
         .feature h3 {
-            margin-bottom: 10px;
             font-size: 21px;
+
+            margin-bottom: 12px;
         }
 
         .feature p {
-            color: #999;
+            color: #999999;
+
+            font-size: 15px;
         }
 
-        /* OWNERS */
+        /* =========================
+           OWNERS
+        ========================= */
 
         .owners {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
         }
 
         .owner {
             background: #101010;
+
             border: 1px solid #292929;
-            border-radius: 16px;
-            padding: 30px 20px;
+
+            border-radius: 17px;
+
+            padding: 35px 20px;
+
             text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .owner:hover {
+            transform: translateY(-7px);
+
+            border-color: #f2c94c;
+        }
+
+        .owner-avatar {
+            width: 80px;
+            height: 80px;
+
+            margin: 0 auto 20px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2c94c,
+                    #806b20
+                );
+
+            color: #080808;
+
+            font-size: 28px;
+
+            font-weight: 900;
         }
 
         .owner-name {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 8px;
+            font-size: 21px;
+
+            font-weight: 900;
+
+            margin-bottom: 5px;
         }
 
         .owner-role {
             color: #f2c94c;
+
             font-weight: 700;
-            margin-bottom: 12px;
+
+            font-size: 13px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 14px;
         }
 
         .owner p {
-            color: #999;
+            color: #999999;
+
             font-size: 14px;
         }
 
-        /* RULES */
+        /* =========================
+           TRADING
+        ========================= */
+
+        .trading {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .trade-box {
+            background: #101010;
+
+            border: 1px solid #292929;
+
+            border-radius: 18px;
+
+            padding: 35px;
+        }
+
+        .trade-box h3 {
+            font-size: 24px;
+
+            margin-bottom: 20px;
+        }
+
+        .trade-box ul {
+            list-style: none;
+        }
+
+        .trade-box li {
+            color: #bbbbbb;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #202020;
+        }
+
+        /* =========================
+           RULES
+        ========================= */
 
         .rules {
             background: #101010;
+
             border: 1px solid #292929;
+
             border-radius: 18px;
-            padding: 35px;
+
+            padding: 40px;
         }
 
         .rules ul {
@@ -265,77 +493,166 @@
         }
 
         .rules li {
-            margin: 12px 0;
-            color: #c5c5c5;
+            color: #c4c4c4;
+
+            margin: 13px 0;
         }
 
-        /* JOIN */
+        /* =========================
+           EVENTS
+        ========================= */
+
+        .event-box {
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(242, 201, 76, 0.12),
+                    transparent 65%
+                ),
+                #101010;
+
+            border: 1px solid #393939;
+
+            border-radius: 22px;
+
+            padding: 65px 30px;
+
+            text-align: center;
+        }
+
+        .event-box h2 {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .event-box p {
+            max-width: 750px;
+
+            margin: auto auto 30px;
+
+            color: #999999;
+
+            font-size: 17px;
+        }
+
+        /* =========================
+           JOIN
+        ========================= */
 
         .join {
             text-align: center;
         }
 
         .join-box {
-            background: linear-gradient(145deg, #121212, #0b0b0b);
-            border: 1px solid #333;
-            border-radius: 20px;
-            padding: 60px 25px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #151515,
+                    #0b0b0b
+                );
+
+            border: 1px solid #333333;
+
+            border-radius: 22px;
+
+            padding: 70px 25px;
         }
 
         .join-box h2 {
-            font-size: 42px;
+            font-size: clamp(35px, 5vw, 55px);
+
             margin-bottom: 15px;
         }
 
         .join-box p {
-            color: #aaa;
-            max-width: 650px;
+            max-width: 700px;
+
             margin: 0 auto 30px;
+
+            color: #999999;
+
+            font-size: 17px;
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             border-top: 1px solid #292929;
+
             text-align: center;
-            padding: 35px 20px;
-            color: #777;
+
+            padding: 40px 20px;
+
+            color: #666666;
         }
 
         footer strong {
-            color: white;
+            color: #ffffff;
         }
 
-        /* MOBILE */
+        /* =========================
+           ANIMATION
+        ========================= */
 
-        @media (max-width: 800px) {
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
 
             .nav-links {
                 display: none;
             }
 
             .features {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .owners {
                 grid-template-columns: 1fr 1fr;
             }
 
+            .trading {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 550px) {
+
             .hero {
                 min-height: auto;
-                padding-top: 50px;
+
+                padding-top: 55px;
             }
 
             .hero-image {
                 max-height: 350px;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .owners {
-                grid-template-columns: 1fr;
             }
 
             .hero p {
@@ -343,56 +660,129 @@
             }
 
             section {
-                padding: 60px 18px;
+                padding: 70px 18px;
             }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .owners {
+                grid-template-columns: 1fr;
+            }
+
+            .about-box {
+                padding: 25px;
+            }
+
+            .about-box p {
+                font-size: 16px;
+            }
+
+            .rules {
+                padding: 25px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
     <nav>
+
         <div class="nav-container">
 
             <div class="logo">
-                LUREX KINGDOM
+                <span>LUREX</span> KINGDOM
             </div>
 
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#owners">Owners</a></li>
-                <li><a href="#rules">Rules</a></li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#features">
+                        Features
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#owners">
+                        Owners
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#trading">
+                        Trading
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#rules">
+                        Rules
+                    </a>
+                </li>
+
             </ul>
 
         </div>
+
     </nav>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
     <header class="hero">
 
         <div class="hero-content">
 
-            <!-- YOUR IMAGE -->
+
+            <!-- IMAGE -->
+
             <img
                 src="lurex-kingdom-banner.png"
-                alt="Lurex Kingdom"
+                alt="Lurex Kingdom Banner"
                 class="hero-image"
             >
 
+
+            <!-- TITLE -->
+
             <h1>
-                Welcome to <span>Lurex Kingdom</span>
+                Welcome to
+                <span>Lurex Kingdom</span>
             </h1>
 
+
+            <!-- DESCRIPTION -->
+
             <p>
-                A growing gaming community built for players who want to
-                meet new people, discover exciting games, participate in
-                events, trade items, and simply have a great time.
+
+                Welcome to Lurex Kingdom — a growing gaming community
+                created for players who want to meet new people, discover
+                exciting games, participate in events, enjoy giveaways,
+                trade supported items, and simply have a great time.
+
             </p>
+
+
+            <!-- BUTTONS -->
 
             <div class="buttons">
 
@@ -402,10 +792,13 @@
                     rel="noopener noreferrer"
                     class="button discord-button"
                 >
-                    Join Our Discord
+                    💬 Join Our Discord
                 </a>
 
-                <a href="#about" class="button learn-button">
+                <a
+                    href="#about"
+                    class="button learn-button"
+                >
                     Explore Lurex Kingdom
                 </a>
 
@@ -416,7 +809,9 @@
     </header>
 
 
-    <!-- ABOUT -->
+    <!-- =========================
+         ABOUT
+    ========================= -->
 
     <section id="about">
 
@@ -425,38 +820,68 @@
         </h2>
 
         <p class="section-subtitle">
-            More than just another gaming community.
+
+            More than just another gaming server.
+
         </p>
+
 
         <div class="about-box">
 
             <p>
-                Welcome to <strong>Lurex Kingdom</strong>! If you're looking
-                for people to play games with, meet new friends, or discover
-                fun and recommended games, you've come to the right place.
-                Lurex Kingdom is a community created around gaming,
-                entertainment, friendship, and having a place where everyone
-                can find something enjoyable to participate in.
+
+                Welcome to <strong>Lurex Kingdom</strong>! If you're
+                looking for people to play games with, want to discover
+                fun and recommended games, or simply want to find an
+                active community to spend time in, you'll find it here.
+
             </p>
 
             <br>
 
             <p>
-                Members can join gaming sessions, talk with other players,
-                discover new experiences, participate in weekly events,
-                and take part in exciting daily giveaways. Whether you're
-                an experienced player or simply looking for something new
-                to play, there is always something happening within the
-                Kingdom.
+
+                Lurex Kingdom is built around gaming, entertainment,
+                community and friendship. Members can meet new people,
+                find players to game with, discuss their favorite games,
+                discover new experiences and participate in a variety
+                of community activities.
+
             </p>
 
             <br>
 
             <p>
+
+                The Kingdom also hosts <strong>weekly events</strong>
+                and <strong>daily giveaways</strong>, giving members
+                plenty of opportunities to participate and get involved.
+                Whether you're looking for a new game, searching for
+                teammates, or simply want somewhere to hang out,
+                there is always something to discover.
+
+            </p>
+
+            <br>
+
+            <p>
+
                 Trading is also welcomed within the community, allowing
-                members to trade items and interact with other players.
+                members to trade supported game items with one another.
                 However, <strong>cross-trading and black-market activity
-                are not supported by Lurex Kingdom</strong>.
+                are not supported</strong> within Lurex Kingdom.
+
+            </p>
+
+            <br>
+
+            <p>
+
+                Our goal is to continue growing Lurex Kingdom into an
+                active, entertaining and welcoming gaming community where
+                members can meet others, enjoy games together and create
+                memorable experiences.
+
             </p>
 
         </div>
@@ -464,7 +889,9 @@
     </section>
 
 
-    <!-- FEATURES -->
+    <!-- =========================
+         FEATURES
+    ========================= -->
 
     <section id="features">
 
@@ -473,120 +900,363 @@
         </h2>
 
         <p class="section-subtitle">
-            There is always something happening in Lurex Kingdom.
+
+            Discover what makes Lurex Kingdom worth joining.
+
         </p>
+
 
         <div class="features">
 
-            <div class="feature">
-                <h3>🎮 Gaming</h3>
-                <p>
-                    Find people to play with and discover new games
-                    recommended by the community.
-                </p>
-            </div>
 
             <div class="feature">
-                <h3>🎉 Weekly Events</h3>
+
+                <div class="feature-icon">
+                    🎮
+                </div>
+
+                <h3>
+                    Gaming
+                </h3>
+
                 <p>
-                    Participate in community events and activities
-                    throughout the week.
+
+                    Find people to play with, build teams and discover
+                    new gaming experiences with other members.
+
                 </p>
+
             </div>
 
-            <div class="feature">
-                <h3>🎁 Daily Giveaways</h3>
-                <p>
-                    Join the server and take your chance at exciting
-                    daily giveaways.
-                </p>
-            </div>
 
             <div class="feature">
-                <h3>🤝 Community</h3>
+
+                <div class="feature-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Game Recommendations
+                </h3>
+
                 <p>
-                    Meet new people, make friends, and become part of
-                    the Lurex Kingdom community.
+
+                    Discover fun games recommended by members of the
+                    Lurex Kingdom community.
+
                 </p>
+
             </div>
 
+
             <div class="feature">
-                <h3>🔄 Trading</h3>
+
+                <div class="feature-icon">
+                    🎉
+                </div>
+
+                <h3>
+                    Weekly Events
+                </h3>
+
                 <p>
+
+                    Participate in weekly events and community activities
+                    designed to keep the server active.
+
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎁
+                </div>
+
+                <h3>
+                    Daily Giveaways
+                </h3>
+
+                <p>
+
+                    Join the community and take part in exciting giveaways
+                    hosted throughout the week.
+
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Community
+                </h3>
+
+                <p>
+
+                    Meet new people, make friends and find other players
+                    who enjoy the same games as you.
+
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🔄
+                </div>
+
+                <h3>
+                    Trading
+                </h3>
+
+                <p>
+
                     Trade supported items with other members while
-                    following community rules.
+                    following the community's trading rules.
+
                 </p>
+
             </div>
 
-            <div class="feature">
-                <h3>🌟 Recommendations</h3>
-                <p>
-                    Discover games and activities recommended by
-                    members of the Kingdom.
-                </p>
-            </div>
 
         </div>
 
     </section>
 
 
-    <!-- OWNERS -->
+    <!-- =========================
+         OWNERS
+    ========================= -->
 
     <section id="owners">
 
         <h2 class="section-title">
-            The Owners
+            Meet The Owners
         </h2>
 
         <p class="section-subtitle">
-            Meet the people behind Lurex Kingdom.
+
+            The people behind Lurex Kingdom.
+
         </p>
+
 
         <div class="owners">
 
+
+            <!-- CHEETOZ -->
+
             <div class="owner">
-                <div class="owner-name">CHEETOZ</div>
-                <div class="owner-role">Owner</div>
+
+                <div class="owner-avatar">
+                    C
+                </div>
+
+                <div class="owner-name">
+                    CHEETOZ
+                </div>
+
+                <div class="owner-role">
+                    Owner
+                </div>
+
                 <p>
+
                     Helping lead the community and shape the future
                     of Lurex Kingdom.
+
                 </p>
+
             </div>
 
+
+            <!-- DOMINICK -->
+
             <div class="owner">
-                <div class="owner-name">Dominick_2</div>
-                <div class="owner-role">Owner</div>
+
+                <div class="owner-avatar">
+                    D
+                </div>
+
+                <div class="owner-name">
+                    Dominick_2
+                </div>
+
+                <div class="owner-role">
+                    Owner
+                </div>
+
                 <p>
+
                     Supporting the community and helping create
                     new experiences for members.
+
                 </p>
+
             </div>
 
-            <div class="owner">
-                <div class="owner-name">Skylar</div>
-                <div class="owner-role">Owner</div>
-                <p>
-                    Contributing to the growth, organization,
-                    and activity of the Kingdom.
-                </p>
-            </div>
+
+            <!-- SKYLAR -->
 
             <div class="owner">
-                <div class="owner-name">Death</div>
-                <div class="owner-role">Owner</div>
+
+                <div class="owner-avatar">
+                    S
+                </div>
+
+                <div class="owner-name">
+                    Skylar
+                </div>
+
+                <div class="owner-role">
+                    Owner
+                </div>
+
                 <p>
-                    Part of the leadership team helping guide
-                    and develop Lurex Kingdom.
+
+                    Contributing to the growth, organization and
+                    activity of the Kingdom.
+
                 </p>
+
             </div>
+
+
+            <!-- MEOWLY -->
+
+            <div class="owner">
+
+                <div class="owner-avatar">
+                    M
+                </div>
+
+                <div class="owner-name">
+                    Meowly
+                </div>
+
+                <div class="owner-role">
+                    Owner
+                </div>
+
+                <p>
+
+                    Helping manage Lurex Kingdom and contributing
+                    to the community's growth and future.
+
+                </p>
+
+            </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- RULES -->
+    <!-- =========================
+         TRADING
+    ========================= -->
+
+    <section id="trading">
+
+        <h2 class="section-title">
+            Trading
+        </h2>
+
+        <p class="section-subtitle">
+
+            Trade responsibly and follow the community rules.
+
+        </p>
+
+
+        <div class="trading">
+
+
+            <div class="trade-box">
+
+                <h3>
+                    ✅ Supported
+                </h3>
+
+                <ul>
+
+                    <li>
+                        ✔ Trading supported game items
+                    </li>
+
+                    <li>
+                        ✔ Trading with community members
+                    </li>
+
+                    <li>
+                        ✔ Discussing legitimate trades
+                    </li>
+
+                    <li>
+                        ✔ Finding people interested in trading
+                    </li>
+
+                    <li>
+                        ✔ Following server trading rules
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="trade-box">
+
+                <h3>
+                    ❌ Not Supported
+                </h3>
+
+                <ul>
+
+                    <li>
+                        ✖ Cross-trading
+                    </li>
+
+                    <li>
+                        ✖ Black-market activity
+                    </li>
+
+                    <li>
+                        ✖ Scamming members
+                    </li>
+
+                    <li>
+                        ✖ Fraudulent trading
+                    </li>
+
+                    <li>
+                        ✖ Breaking community rules
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RULES
+    ========================= -->
 
     <section id="rules">
 
@@ -595,19 +1265,49 @@
         </h2>
 
         <p class="section-subtitle">
-            Help us keep Lurex Kingdom fun, welcoming, and safe.
+
+            Help make Lurex Kingdom a fun and welcoming place.
+
         </p>
+
 
         <div class="rules">
 
             <ul>
-                <li>Respect other members of the community.</li>
-                <li>Follow the rules established within the Discord server.</li>
-                <li>Cross-trading is not supported by Lurex Kingdom.</li>
-                <li>Black-market activity is not supported.</li>
-                <li>Do not scam, exploit, or intentionally harm other members.</li>
-                <li>Keep conversations appropriate and respectful.</li>
-                <li>Have fun and help make the community better.</li>
+
+                <li>
+                    Respect other members of the community.
+                </li>
+
+                <li>
+                    Follow the rules established within the Discord server.
+                </li>
+
+                <li>
+                    Cross-trading is not supported by Lurex Kingdom.
+                </li>
+
+                <li>
+                    Black-market activity is not supported.
+                </li>
+
+                <li>
+                    Do not scam, exploit or intentionally harm other members.
+                </li>
+
+                <li>
+                    Keep conversations appropriate and respectful.
+                </li>
+
+                <li>
+                    Do not intentionally cause unnecessary problems within
+                    the community.
+                </li>
+
+                <li>
+                    Have fun and help make the Kingdom better.
+                </li>
+
             </ul>
 
         </div>
@@ -615,18 +1315,27 @@
     </section>
 
 
-    <!-- JOIN -->
+    <!-- =========================
+         EVENTS
+    ========================= -->
 
-    <section class="join">
+    <section>
 
-        <div class="join-box">
+        <div class="event-box">
 
-            <h2>Ready to Join?</h2>
+            <h2>
+                🎉 Events & Giveaways
+            </h2>
 
             <p>
-                Come meet the community, find people to play with,
-                participate in events, enter giveaways, and become
-                part of Lurex Kingdom.
+
+                Lurex Kingdom is designed to stay active. Take part in
+                weekly events, community activities and giveaways while
+                meeting other members and enjoying the server.
+
+                More events and activities can be introduced as the
+                community continues to grow.
+
             </p>
 
             <a
@@ -635,7 +1344,7 @@
                 rel="noopener noreferrer"
                 class="button discord-button"
             >
-                Join Lurex Kingdom
+                Check Out The Server
             </a>
 
         </div>
@@ -643,20 +1352,64 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         JOIN DISCORD
+    ========================= -->
+
+    <section class="join">
+
+        <div class="join-box">
+
+            <h2>
+                Ready to Join?
+            </h2>
+
+            <p>
+
+                Come meet the community, find people to play with,
+                discover new games, participate in events, enter
+                giveaways and become part of Lurex Kingdom.
+
+            </p>
+
+
+            <a
+                href="https://discord.gg/T2HymyvKr"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button discord-button"
+            >
+                💬 Join Lurex Kingdom
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
         <p>
-            © 2026 <strong>Lurex Kingdom</strong>.
+
+            © 2026
+            <strong>Lurex Kingdom</strong>.
             All rights reserved.
+
         </p>
 
         <p>
+
             Built for the Lurex Kingdom community.
+
         </p>
 
     </footer>
 
+
 </body>
+
 </html>
