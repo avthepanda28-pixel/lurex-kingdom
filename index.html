@@ -9,7 +9,6 @@
 <meta name="description" content="Welcome to Lurex Kingdom — a gaming community for players, events, giveaways, trading and discovering new games.">
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -23,35 +22,35 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background:
-        radial-gradient(circle at 15% 10%, rgba(242,201,76,.12), transparent 30%),
-        radial-gradient(circle at 85% 30%, rgba(88,101,242,.10), transparent 30%),
+        radial-gradient(circle at 10% 10%, rgba(242,201,76,.12), transparent 30%),
+        radial-gradient(circle at 90% 30%, rgba(88,101,242,.12), transparent 30%),
         #050505;
-    color: white;
+    color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-body::after {
+body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background-image:
-        linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
+    background:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
     background-size: 45px 45px;
     z-index: -1;
 }
 
 
-/* ================= NAVBAR ================= */
+/* ================= NAVIGATION ================= */
 
 nav {
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    background: rgba(5,5,5,.9);
+    background: rgba(5,5,5,.88);
     backdrop-filter: blur(18px);
 
     border-bottom: 1px solid #292929;
@@ -60,6 +59,7 @@ nav {
 .nav-container {
     max-width: 1250px;
     margin: auto;
+
     padding: 18px 25px;
 
     display: flex;
@@ -99,11 +99,12 @@ nav {
 
 .hero {
     min-height: 92vh;
+
     padding: 80px 20px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     text-align: center;
 }
@@ -121,6 +122,7 @@ nav {
     object-fit: cover;
 
     display: block;
+
     margin: 0 auto 45px;
 
     border-radius: 25px;
@@ -134,6 +136,7 @@ nav {
 
 .hero h1 {
     font-size: clamp(45px,7vw,85px);
+
     line-height: 1.05;
 
     margin-bottom: 25px;
@@ -147,6 +150,7 @@ nav {
 
 .hero p {
     max-width: 850px;
+
     margin: auto;
 
     color: #bdbdbd;
@@ -186,21 +190,21 @@ nav {
 .discord-button {
     background: #5865F2;
 
-    color: white;
+    color: #fff;
 
     box-shadow:
-        0 10px 30px rgba(88,101,242,.18);
+        0 10px 30px rgba(88,101,242,.2);
 }
 
 .discord-button:hover {
     transform: translateY(-5px);
 
     box-shadow:
-        0 15px 40px rgba(88,101,242,.35);
+        0 15px 40px rgba(88,101,242,.4);
 }
 
 .learn-button {
-    color: white;
+    color: #fff;
 
     background: #111;
 
@@ -308,7 +312,8 @@ section {
     border-color: #f2c94c;
 
     box-shadow:
-        0 15px 45px rgba(0,0,0,.45);
+        0 15px 45px rgba(0,0,0,.45),
+        0 0 25px rgba(242,201,76,.07);
 }
 
 .feature-icon {
@@ -359,15 +364,16 @@ section {
     border-color: #f2c94c;
 
     box-shadow:
-        0 15px 45px rgba(0,0,0,.45);
+        0 15px 45px rgba(0,0,0,.45),
+        0 0 25px rgba(242,201,76,.08);
 }
 
 
-/* ================= OWNER PFP ================= */
+/* ================= OWNER PROFILE PICTURES ================= */
 
 .owner-avatar {
-    width: 105px;
-    height: 105px;
+    width: 110px;
+    height: 110px;
 
     margin: 0 auto 20px;
 
@@ -380,7 +386,7 @@ section {
     background: #161616;
 
     box-shadow:
-        0 0 30px rgba(242,201,76,.16);
+        0 0 30px rgba(242,201,76,.18);
 }
 
 .owner-avatar img {
@@ -393,7 +399,7 @@ section {
 }
 
 .owner-name {
-    font-size: 21px;
+    font-size: 22px;
 
     font-weight: 900;
 
@@ -575,7 +581,7 @@ footer {
 }
 
 footer strong {
-    color: white;
+    color: #fff;
 }
 
 
@@ -629,7 +635,8 @@ footer strong {
 
     .features,
     .owners {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .about-box,
@@ -885,14 +892,11 @@ There is always something happening in Lurex Kingdom.
 <h3>Gaming</h3>
 
 <p>
-
 Find people to play with and discover
 new gaming experiences.
-
 </p>
 
 </div>
-
 
 
 <div class="feature">
@@ -902,14 +906,11 @@ new gaming experiences.
 <h3>Game Recommendations</h3>
 
 <p>
-
 Discover fun games recommended by
 members of the community.
-
 </p>
 
 </div>
-
 
 
 <div class="feature">
@@ -919,14 +920,11 @@ members of the community.
 <h3>Weekly Events</h3>
 
 <p>
-
 Participate in weekly events and
 community activities.
-
 </p>
 
 </div>
-
 
 
 <div class="feature">
@@ -936,14 +934,11 @@ community activities.
 <h3>Daily Giveaways</h3>
 
 <p>
-
 Take part in exciting giveaways
 hosted throughout the community.
-
 </p>
 
 </div>
-
 
 
 <div class="feature">
@@ -953,14 +948,11 @@ hosted throughout the community.
 <h3>Community</h3>
 
 <p>
-
 Meet new people, make friends,
 and find other players.
-
 </p>
 
 </div>
-
 
 
 <div class="feature">
@@ -970,10 +962,8 @@ and find other players.
 <h3>Trading</h3>
 
 <p>
-
 Trade supported items with other
 members while following the rules.
-
 </p>
 
 </div>
@@ -1007,43 +997,31 @@ The people behind Lurex Kingdom.
 <div class="owners">
 
 
-
 <!-- CHEETOZ -->
 
 <div class="owner">
 
-
 <div class="owner-avatar">
 
 <img
-src="cheetoz.png"
+src="CHEETOZ.png"
 alt="CHEETOZ profile picture"
 >
 
 </div>
 
-
 <div class="owner-name">
-
 CHEETOZ
-
 </div>
-
 
 <div class="owner-role">
-
 Owner
-
 </div>
 
-
 <p>
-
 Helping lead the community and shape
 the future of Lurex Kingdom.
-
 </p>
-
 
 </div>
 
@@ -1053,38 +1031,27 @@ the future of Lurex Kingdom.
 
 <div class="owner">
 
-
 <div class="owner-avatar">
 
 <img
-src="dominick_2.png"
+src="Dominick_2.png"
 alt="Dominick_2 profile picture"
 >
 
 </div>
 
-
 <div class="owner-name">
-
 Dominick_2
-
 </div>
-
 
 <div class="owner-role">
-
 Owner
-
 </div>
 
-
 <p>
-
 Supporting the community and helping
 create new experiences for members.
-
 </p>
-
 
 </div>
 
@@ -1093,7 +1060,6 @@ create new experiences for members.
 <!-- SKYLAR -->
 
 <div class="owner">
-
 
 <div class="owner-avatar">
 
@@ -1104,28 +1070,18 @@ alt="Skylar profile picture"
 
 </div>
 
-
 <div class="owner-name">
-
 Skylar
-
 </div>
-
 
 <div class="owner-role">
-
 Owner
-
 </div>
 
-
 <p>
-
 Contributing to the growth, organization,
 and activity of the Kingdom.
-
 </p>
-
 
 </div>
 
@@ -1134,7 +1090,6 @@ and activity of the Kingdom.
 <!-- MEOWLY -->
 
 <div class="owner">
-
 
 <div class="owner-avatar">
 
@@ -1145,28 +1100,18 @@ alt="Meowly profile picture"
 
 </div>
 
-
 <div class="owner-name">
-
 Meowly
-
 </div>
-
 
 <div class="owner-role">
-
 Owner
-
 </div>
 
-
 <p>
-
 Helping manage Lurex Kingdom and contributing
 to the community's growth and future.
-
 </p>
-
 
 </div>
 
@@ -1183,16 +1128,12 @@ to the community's growth and future.
 
 
 <h2 class="section-title">
-
 Trading
-
 </h2>
 
 
 <p class="section-subtitle">
-
 Trade responsibly and follow the community rules.
-
 </p>
 
 
@@ -1201,13 +1142,9 @@ Trade responsibly and follow the community rules.
 
 <div class="trade-box">
 
-
 <h3>
-
 ✅ Supported
-
 </h3>
-
 
 <ul>
 
@@ -1233,20 +1170,15 @@ Trade responsibly and follow the community rules.
 
 </ul>
 
-
 </div>
 
 
 
 <div class="trade-box">
 
-
 <h3>
-
 ❌ Not Supported
-
 </h3>
-
 
 <ul>
 
@@ -1272,7 +1204,6 @@ Trade responsibly and follow the community rules.
 
 </ul>
 
-
 </div>
 
 
@@ -1288,22 +1219,17 @@ Trade responsibly and follow the community rules.
 
 
 <h2 class="section-title">
-
 Community Standards
-
 </h2>
 
 
 <p class="section-subtitle">
-
 Help keep Lurex Kingdom fun, welcoming,
 and safe.
-
 </p>
 
 
 <div class="rules">
-
 
 <ul>
 
@@ -1345,7 +1271,6 @@ Have fun and help make the community better.
 
 </ul>
 
-
 </div>
 
 </section>
@@ -1356,16 +1281,11 @@ Have fun and help make the community better.
 
 <section>
 
-
 <div class="event-box">
 
-
 <h2>
-
 🎉 Events & Giveaways
-
 </h2>
-
 
 <p>
 
@@ -1389,7 +1309,6 @@ Check Out The Server
 
 </a>
 
-
 </div>
 
 </section>
@@ -1400,16 +1319,11 @@ Check Out The Server
 
 <section class="join">
 
-
 <div class="join-box">
 
-
 <h2>
-
 Ready to Join?
-
 </h2>
-
 
 <p>
 
@@ -1431,7 +1345,6 @@ class="button discord-button"
 
 </a>
 
-
 </div>
 
 </section>
@@ -1442,21 +1355,14 @@ class="button discord-button"
 
 <footer>
 
-
 <p>
-
 © 2026 <strong>Lurex Kingdom</strong>.
 All rights reserved.
-
 </p>
-
 
 <p>
-
 Built for the Lurex Kingdom community.
-
 </p>
-
 
 </footer>
 
